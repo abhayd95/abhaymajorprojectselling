@@ -1,181 +1,367 @@
-// Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+document.addEventListener('DOMContentLoaded', function() {
+    // Preloader
+    const preloader = document.querySelector('.preloader');
+    
+    if (preloader) {
+        window.addEventListener('load', function() {
+            preloader.style.opacity = '0';
+            preloader.style.visibility = 'hidden';
+            
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
         });
-        
-        // Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const html = document.documentElement;
-        
-        themeToggle.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            const isDark = html.classList.contains('dark');
-            themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navbar = document.querySelector('.navbar');
+    
+    if (mobileMenuBtn && navbar) {
+        mobileMenuBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navbar.classList.toggle('active');
         });
-        
+    }
+    
+    // Close mobile menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (mobileMenuBtn && navbar) {
+                mobileMenuBtn.classList.remove('active');
+                navbar.classList.remove('active');
+            }
+        });
+    });
+
+    // Theme Toggle
+    const themeSwitch = document.getElementById('theme-switch');
+    const body = document.body;
+    
+    if (themeSwitch) {
         // Check for saved theme preference
         if (localStorage.getItem('theme') === 'dark') {
-            html.classList.add('dark');
-            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            themeSwitch.checked = true;
+            body.setAttribute('data-theme', 'dark');
         }
         
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                if (this.getAttribute('href') === '#') return;
-                
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
-                }
-            });
-        });
-        
-        // Animated counters
-        const counters = document.querySelectorAll('.stat-number');
-        const speed = 200;
-        
-        function animateCounters() {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-count');
-                const count = +counter.innerText;
-                const increment = target / speed;
-                
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    setTimeout(animateCounters, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            });
-        }
-        
-        // Start counters when stats section is in view
-        const statsSection = document.querySelector('.stats');
-        const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                animateCounters();
-                observer.unobserve(statsSection);
+        themeSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
             }
-        }, { threshold: 0.5 });
+        });
+    }
+
+    // Typewriter Effect
+    const typewriterElement = document.querySelector('.typewriter');
+    
+    if (typewriterElement) {
+        const text = "Welcome to Abhay Major Project Selling";
+        let i = 0;
         
-        observer.observe(statsSection);
-        
-        // Scroll reveal animation
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        function checkScroll() {
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
+        function typeWriter() {
+            if (i < text.length) {
+                typewriterElement.textContent = text.substring(0, i + 1);
+                i++;
+                setTimeout(typeWriter, 100);
+            } else {
+                // Add blinking cursor after typing is complete
+                const cursor = document.createElement('span');
+                cursor.className = 'cursor';
+                cursor.textContent = '|';
+                typewriterElement.appendChild(cursor);
                 
-                if (elementTop < windowHeight - 100) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
+                // Blinking animation
+                setInterval(() => {
+                    cursor.style.visibility = cursor.style.visibility === 'hidden' ? 'visible' : 'hidden';
+                }, 500);
+            }
         }
         
-        window.addEventListener('scroll', checkScroll);
-        window.addEventListener('load', checkScroll);
+        // Clear any existing content
+        typewriterElement.textContent = '';
+        // Start typing after 1 second
+        setTimeout(typeWriter, 1000);
+    }
+
+    // Rotating Text
+    const rotatingText = document.querySelector('.rotating-text');
+    
+    if (rotatingText) {
+        const texts = ["100% Working Projects", "Documentation Included", "Ready to Submit", "Source Code Provided"];
         
-        // Payment Modal
-        const buyButtons = document.querySelectorAll('.buy-btn');
-        const paymentModal = document.getElementById('paymentModal');
-        const modalClose = document.getElementById('modalClose');
-        const modalProjectTitle = document.getElementById('modalProjectTitle');
-        const modalProjectPrice = document.getElementById('modalProjectPrice');
-        const qrCodeImage = document.getElementById('qrCodeImage');
-        const paymentMethods = document.querySelectorAll('.payment-method');
-        const verifyPaymentBtn = document.getElementById('verifyPayment');
-        const downloadBtn = document.getElementById('downloadBtn');
-        const utrNumberInput = document.getElementById('utrNumber');
-        const successMessage = document.getElementById('successMessage');
+        // Clear any existing content
+        rotatingText.innerHTML = '';
         
-        // Open modal with project details
-        buyButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const price = button.getAttribute('data-price');
-                const title = button.getAttribute('data-title');
-                
-                modalProjectTitle.textContent = title;
-                modalProjectPrice.textContent = `₹${price}`;
-                qrCodeImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=at546714-1@okhdfcbank&pn=ProjectHub&am=${price}&cu=INR`;
-                
-                paymentModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
+        texts.forEach((text, index) => {
+            const span = document.createElement('span');
+            span.textContent = text;
+            span.style.position = 'absolute';
+            span.style.width = '100%';
+            span.style.height = '100%';
+            span.style.top = '0';
+            span.style.left = '0';
+            span.style.opacity = '0';
+            span.style.animation = `rotateWords 12s linear infinite ${index * 3}s`;
+            rotatingText.appendChild(span);
+        });
+    }
+
+    // Smooth Scroll for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const headerHeight = document.querySelector('header')?.offsetHeight || 80;
+                window.scrollTo({
+                    top: targetElement.offsetTop - headerHeight,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Scroll Reveal Animation
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.section-title, .section-subtitle, .project-card, .feature-card, .testimonial-card, .contact-form, .info-card');
+        
+        elements.forEach(element => {
+            if (element.classList.contains('animated')) return;
+            
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if (elementPosition < screenPosition) {
+                if (element.classList.contains('section-title')) {
+                    element.classList.add('slide-in-left', 'animated');
+                } else if (element.classList.contains('section-subtitle')) {
+                    element.classList.add('fade-in', 'animated');
+                } else if (element.classList.contains('project-card') || element.classList.contains('feature-card')) {
+                    element.classList.add('slide-in-up', 'animated');
+                } else if (element.classList.contains('testimonial-card')) {
+                    element.classList.add('slide-in-right', 'animated');
+                } else {
+                    element.classList.add('fade-in', 'animated');
+                }
+            }
+        });
+    };
+    
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Run once on page load
+
+    // Scroll to Top Button
+    const scrollTopBtn = document.querySelector('.float-scroll-top');
+    
+    if (scrollTopBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
         });
         
-        // Close modal
-        modalClose.addEventListener('click', () => {
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    // Payment Modal
+    const payNowBtn = document.getElementById('pay-now-btn');
+    const buyNowBtns = document.querySelectorAll('.buy-now-btn');
+    const paymentModal = document.getElementById('payment-modal');
+    const closeModal = document.querySelector('.close-modal');
+    const selectedProjectName = document.getElementById('selected-project-name');
+    const paymentOptions = document.querySelectorAll('.payment-option');
+    const paymentDetails = document.querySelectorAll('.payment-details');
+    const verifyPaymentBtn = document.getElementById('verify-payment');
+    const downloadSection = document.querySelector('.download-section');
+    const downloadBtn = document.getElementById('download-project');
+    const utrInput = document.getElementById('utr-number');
+    const paymentTimeInput = document.getElementById('payment-time');
+    
+    if (paymentModal) {
+        function resetPaymentForm() {
+            if (utrInput) utrInput.value = '';
+            if (paymentTimeInput) paymentTimeInput.value = '';
+            if (verifyPaymentBtn) {
+                verifyPaymentBtn.textContent = 'Verify Payment';
+                verifyPaymentBtn.style.backgroundColor = '';
+                verifyPaymentBtn.disabled = false;
+            }
+            if (downloadSection) downloadSection.style.display = 'none';
+            
+            // Reset to UPI payment by default
+            paymentOptions[0]?.click();
+        }
+        
+        function openModal(projectName) {
+            if (projectName && selectedProjectName) {
+                selectedProjectName.textContent = projectName;
+            }
+            paymentModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            resetPaymentForm();
+        }
+        
+        function closeModalFunc() {
             paymentModal.classList.remove('active');
             document.body.style.overflow = 'auto';
-            resetModal();
-        });
+        }
         
-        // Close modal when clicking outside
-        paymentModal.addEventListener('click', (e) => {
-            if (e.target === paymentModal) {
-                paymentModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-                resetModal();
-            }
-        });
+        if (payNowBtn) {
+            payNowBtn.addEventListener('click', () => openModal('Custom Project'));
+        }
         
-        // Payment method selection
-        paymentMethods.forEach(method => {
-            method.addEventListener('click', () => {
-                paymentMethods.forEach(m => m.classList.remove('active'));
-                method.classList.add('active');
+        buyNowBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const projectName = this.getAttribute('data-project');
+                openModal(projectName);
             });
         });
         
-        // Verify payment (simulated)
-        verifyPaymentBtn.addEventListener('click', () => {
-            if (utrNumberInput.value.trim() === '') {
-                alert('Please enter your UTR number');
+        if (closeModal) {
+            closeModal.addEventListener('click', closeModalFunc);
+        }
+        
+        // Close modal when clicking outside
+        paymentModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModalFunc();
+            }
+        });
+        
+        // Payment method toggle
+        paymentOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const method = this.getAttribute('data-method');
+                
+                paymentOptions.forEach(opt => opt.classList.remove('active'));
+                paymentDetails.forEach(detail => detail.style.display = 'none');
+                
+                this.classList.add('active');
+                const detailsElement = document.querySelector(`.${method}-details`);
+                if (detailsElement) detailsElement.style.display = 'block';
+            });
+        });
+        
+        // Mock payment verification
+        if (verifyPaymentBtn) {
+            verifyPaymentBtn.addEventListener('click', function() {
+                const utrNumber = utrInput?.value;
+                const paymentTime = paymentTimeInput?.value;
+                
+                if (!utrNumber || !paymentTime) {
+                    alert('Please enter UTR number and payment time');
+                    return;
+                }
+                
+                // Mock validation - in a real app, you would verify with your backend
+                if (utrNumber.length >= 10) {
+                    // Show success and download section
+                    if (downloadSection) downloadSection.style.display = 'block';
+                    
+                    // Scroll to download section
+                    downloadSection?.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Change button text
+                    this.textContent = 'Payment Verified';
+                    this.style.backgroundColor = '#00b894';
+                    
+                    // Disable button
+                    this.disabled = true;
+                } else {
+                    alert('Please enter a valid UTR number (at least 10 characters)');
+                }
+            });
+        }
+        
+        // Mock download
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', function() {
+                alert('Project bundle downloaded successfully!');
+                closeModalFunc();
+            });
+        }
+    }
+
+    // Form submission
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name')?.value;
+            const email = document.getElementById('email')?.value;
+            const message = document.getElementById('message')?.value;
+            
+            // Basic validation
+            if (!name || !email || !message) {
+                alert('Please fill in all fields');
                 return;
             }
             
-            // Simulate verification
-            setTimeout(() => {
-                successMessage.classList.add('active');
-                verifyPaymentBtn.style.display = 'none';
-                downloadBtn.classList.add('active');
-            }, 1000);
+            // Email validation
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            // Here you would typically send the form data to a server
+            console.log({ name, email, message });
+            
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
         });
+    }
+
+    // Animated form labels
+    const formGroups = document.querySelectorAll('.form-group');
+    
+    formGroups.forEach(group => {
+        const input = group.querySelector('input, textarea');
+        const label = group.querySelector('label');
+        const underline = group.querySelector('.underline');
         
-        // Download project files (simulated)
-        downloadBtn.addEventListener('click', () => {
-            alert('Project files download started! (This is a demo)');
-            paymentModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-            resetModal();
-        });
+        if (!input || !label || !underline) return;
         
-        // Reset modal state
-        function resetModal() {
-            successMessage.classList.remove('active');
-            verifyPaymentBtn.style.display = 'block';
-            downloadBtn.classList.remove('active');
-            utrNumberInput.value = '';
-            paymentMethods.forEach(m => m.classList.remove('active'));
+        // Check if input has value on page load (for browser autofill)
+        if (input.value) {
+            label.style.top = '-1.2rem';
+            label.style.fontSize = '0.8rem';
+            label.style.color = 'var(--primary-color)';
+            underline.style.width = '100%';
         }
+        
+        input.addEventListener('focus', () => {
+            label.style.top = '-1.2rem';
+            label.style.fontSize = '0.8rem';
+            label.style.color = 'var(--primary-color)';
+            underline.style.width = '100%';
+        });
+        
+        input.addEventListener('blur', () => {
+            if (!input.value) {
+                label.style.top = '0.8rem';
+                label.style.fontSize = '1rem';
+                label.style.color = 'var(--text-light)';
+                underline.style.width = '0';
+            }
+        });
+    });
+});

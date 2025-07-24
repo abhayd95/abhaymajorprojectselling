@@ -1,178 +1,332 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy Premium Major Projects for College</title>
+    <title>Abhay Virus - Major Project Seller</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
 </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    </style>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="virus-icon">
+                <div class="circle"></div>
+                <div class="spikes">
+                    <div class="spike"></div>
+                    <div class="spike"></div>
+                    <div class="spike"></div>
+                    <div class="spike"></div>
+                    <div class="spike"></div>
+                    <div class="spike"></div>
+                </div>
+            </div>
+            <p>Loading Abhay Virus...</p>
+        </div>
+    </div>
+
     <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="#" class="logo">
-                <i class="fas fa-laptop-code"></i>
-                <span>Abhay_virus</span>
-            </a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
+    <header class="header">
+        <div class="container">
+            <div class="logo" id="logo">
+                <span class="logo-text glitch" data-text="Abhay Virus">Abhay Virus</span>
+                <span class="tagline">Major Project Seller</span>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
-            <button class="theme-toggle" id="themeToggle">
-                <i class="fas fa-moon"></i>
-            </button>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-switch">
+                <label for="theme-switch" class="theme-label">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <span class="theme-ball"></span>
+                </label>
+            </div>
+            <div class="mobile-menu-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="fade-in">Buy Premium Major Projects for College</h1>
-                <p class="fade-in delay-1">Get ready-to-submit, well-documented projects with source code for your college coursework. Save hundreds of hours of development time.</p>
-                <div class="hero-btns fade-in delay-2">
-                    <a href="#projects" class="btn btn-primary btn-neon">Browse Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
-                </div>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="typewriter">Welcome to Abhay Major Project Selling</h1>
+            <p class="rotating-text">100% Working Projects</p>
+            <div class="hero-btns">
+                <button class="btn btn-primary pulse" id="pay-now-btn">Pay Now</button>
+                <a href="#projects" class="btn btn-secondary">View Projects</a>
             </div>
         </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-container">
-                <div class="stat-item fade-in">
-                    <div class="stat-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <div class="stat-number" data-count="850">0</div>
-                    <div class="stat-text">Projects Available</div>
-                </div>
-                <div class="stat-item fade-in delay-1">
-                    <div class="stat-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="stat-number" data-count="5200">0</div>
-                    <div class="stat-text">Happy Students</div>
-                </div>
-                <div class="stat-item fade-in delay-2">
-                    <div class="stat-icon">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    <div class="stat-number" data-count="120">0</div>
-                    <div class="stat-text">Colleges Served</div>
-                </div>
-                <div class="stat-item fade-in delay-3">
-                    <div class="stat-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <div class="stat-number" data-count="24">0</div>
-                    <div class="stat-text">Support Hours</div>
-                </div>
-            </div>
+        <div class="scroll-down">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="projects" id="projects">
+    <section class="section projects" id="projects">
         <div class="container">
-            <div class="section-header fade-in">
-                <h2>Featured Projects</h2>
-                <p>Choose from our wide range of premium projects for your college coursework. All projects come with complete documentation and source code.</p>
-            </div>
+            <h2 class="section-title">Our Project Collection</h2>
+            <p class="section-subtitle">Choose from our wide range of major projects</p>
+            
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card fade-in">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Web Development Project" class="project-image">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="ecommerce.jpg" alt="E-Commerce Website">
+                    </div>
                     <div class="project-content">
-                        <span class="project-category">Web Development</span>
-                        <h3 class="project-title">E-commerce Website</h3>
-                        <p class="project-description">Complete e-commerce solution with product catalog, cart, checkout, and admin dashboard.</p>
-                        <div class="project-footer">
-                            <div class="project-price">₹99</div>
-                            <button class="btn btn-primary btn-sm btn-neon buy-btn" data-price="99" data-title="E-commerce Website">Buy Now</button>
+                        <h3>E-Commerce Website</h3>
+                        <div class="tech-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>PHP</span>
+                            <span>MySQL</span>
                         </div>
+                        <p>Complete e-commerce solution with product catalog, cart, checkout and admin panel.</p>
+                        <button class="btn btn-small buy-now-btn" data-project="E-Commerce Website">Buy Now ₹999</button>
                     </div>
                 </div>
                 
                 <!-- Project 2 -->
-                <div class="project-card fade-in delay-1">
-                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80" alt="AI/ML Project" class="project-image">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="3.jpg" alt="Student Management System">
+                    </div>
                     <div class="project-content">
-                        <span class="project-category">AI/ML</span>
-                        <h3 class="project-title">Fake News Detection</h3>
-                        <p class="project-description">Machine learning model to detect fake news articles using NLP techniques.</p>
-                        <div class="project-footer">
-                            <div class="project-price">₹149</div>
-                            <button class="btn btn-primary btn-sm btn-neon buy-btn" data-price="149" data-title="Fake News Detection">Buy Now</button>
+                        <h3>Student Management System</h3>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>SQLite</span>
                         </div>
+                        <p>School/college student record management system with attendance and performance tracking.</p>
+                        <button class="btn btn-small buy-now-btn" data-project="Student Management System">Buy Now ₹799</button>
                     </div>
                 </div>
                 
                 <!-- Project 3 -->
-                <div class="project-card fade-in delay-2">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cybersecurity Project" class="project-image">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="4.jpg" alt="Hospital Management System">
+                    </div>
                     <div class="project-content">
-                        <span class="project-category">Cybersecurity</span>
-                        <h3 class="project-title">Network Intrusion Detection</h3>
-                        <p class="project-description">System to detect and prevent unauthorized access to computer networks.</p>
-                        <div class="project-footer">
-                            <div class="project-price">₹129</div>
-                            <button class="btn btn-primary btn-sm btn-neon buy-btn" data-price="129" data-title="Network Intrusion Detection">Buy Now</button>
+                        <h3>Hospital Management System</h3>
+                        <div class="tech-tags">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>MySQL</span>
                         </div>
+                        <p>Complete hospital management solution for  patient records, appointments and billing. using Java spring  Boot MySQL</p>
+                        <button class="btn btn-small buy-now-btn" data-project="Hospital Management System">Buy Now ₹1299</button>
                     </div>
                 </div>
                 
                 <!-- Project 4 -->
-                <div class="project-card fade-in">
-                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="IoT Project" class="project-image">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="portfolio.jpg" alt="Online Examination System">
+                    </div>
                     <div class="project-content">
-                        <span class="project-category">IoT</span>
-                        <h3 class="project-title">Smart Home Automation</h3>
-                        <p class="project-description">IoT-based system to control home appliances remotely via smartphone.</p>
-                        <div class="project-footer">
-                            <div class="project-price">₹199</div>
-                            <button class="btn btn-primary btn-sm btn-neon buy-btn" data-price="199" data-title="Smart Home Automation">Buy Now</button>
+                        <h3>Online Examination System</h3>
+                        <div class="tech-tags">
+                            <span>JavaScript</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
                         </div>
+                        <p>Online test platform with timer, automatic evaluation and result generation.</p>
+                        <button class="btn btn-small buy-now-btn" data-project="Online Examination System">Buy Now ₹899</button>
                     </div>
                 </div>
                 
                 <!-- Project 5 -->
-                <div class="project-card fade-in delay-1">
-                    <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Android Project" class="project-image">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="5.jpg" alt="Inventory Management">
+                    </div>
                     <div class="project-content">
-                        <span class="project-category">Android</span>
-                        <h3 class="project-title">Health Tracker App</h3>
-                        <p class="project-description">Android application to track fitness activities, diet, and health metrics.</p>
-                        <div class="project-footer">
-                            <div class="project-price">₹149</div>
-                            <button class="btn btn-primary btn-sm btn-neon buy-btn" data-price="149" data-title="Health Tracker App">Buy Now</button>
+                        <h3>Inventory Management</h3>
+                        <div class="tech-tags">
+                            <span>C#</span>
+                            <span>.NET</span>
+                            <span>SQL Server</span>
                         </div>
+                        <p>Stock management system with barcode support, low stock alerts and reporting.</p>
+                        <button class="btn btn-small buy-now-btn" data-project="Inventory Management">Buy Now ₹1099</button>
                     </div>
                 </div>
                 
                 <!-- Project 6 -->
-                <div class="project-card fade-in delay-2">
-                    <img src="https://images.unsplash.com/photo-1622675363311-3e1904dc1885?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Web Development Project" class="project-image">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="ecommerce.jpg" alt="AI Chatbot">
+                    </div>
                     <div class="project-content">
-                        <span class="project-category">Web Development</span>
-                        <h3 class="project-title">Social Media Dashboard</h3>
-                        <p class="project-description">Analytics dashboard for social media platforms with real-time data visualization.</p>
-                        <div class="project-footer">
-                            <div class="project-price">₹99</div>
-                            <button class="btn btn-primary btn-sm btn-neon buy-btn" data-price="99" data-title="Social Media Dashboard">Buy Now</button>
+                        <h3>AI Chatbot</h3>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>NLTK</span>
+                        </div>
+                        <p>Artificial intelligence based chatbot with natural language processing capabilities.</p>
+                        <button class="btn btn-small buy-now-btn" data-project="AI Chatbot">Buy Now ₹1499</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features" id="features">
+        <div class="container">
+            <h2 class="section-title">What You Get</h2>
+            <p class="section-subtitle">Every project comes with complete package</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Complete Documentation</h3>
+                    <p>Detailed project report with abstract, diagrams, and implementation details ready for submission.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Source Code</h3>
+                    <p>Well-commented, organized source code with proper structure and modular design.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Guide</h3>
+                    <p>Step-by-step video tutorial explaining how to setup and run the project.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Support</h3>
+                    <p>7 days free support for any queries or issues you face while implementing the project.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Database</h3>
+                    <p>SQL dump file with sample data to get you started quickly.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Free Updates</h3>
+                    <p>Free minor updates and bug fixes for 3 months after purchase.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+
+<section class="testimonial" >
+    <div class="testimonial-box" id="testimonialBox">
+  <img id="testimonialImg" src="vishal.jpeg" alt="User">
+  <h2 id="testimonialTitle">Abhay Major Project Selling</h2>
+  <div class="stars">★★★★★</div>
+  <p class="testimonial" id="testimonialText">I got my major project delivered instantly. Perfect UI, working code, and complete report!"</p>
+  <p class="author" id="authorText">- Priya Sharma, BCA</p>
+  <button class="next-btn" onclick="nextTestimonial()">Next➡️</button>
+</div>
+
+</section>
+    
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Have questions? Contact us directly</p>
+            
+            <div class="contact-container">
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Your Name</label>
+                        <span class="underline"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Email Address</label>
+                        <span class="underline"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="message" rows="4" required></textarea>
+                        <label for="message">Your Message</label>
+                        <span class="underline"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email Us</h3>
+                            <p>at546714@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>WhatsApp</h3>
+                            <p>+91 6307048631</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Working Hours</h3>
+                            <p>Mon-Sat: 10AM - 7PM</p>
                         </div>
                     </div>
                 </div>
@@ -180,109 +334,221 @@
         </div>
     </section>
 
-    <!-- Payment Modal -->
-    <div class="modal" id="paymentModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">&times;</button>
-            <div class="modal-header">
-                <h3 id="modalProjectTitle">Project Title</h3>
-                <p>Complete your purchase to download the project files</p>
-            </div>
-            
-            <div class="payment-methods">
-                <div class="payment-method" data-method="phonepe">
-                    <i class="fab fa-google-pay"></i>
-                    <span>PhonePe</span>
-                </div>
-                <div class="payment-method" data-method="gpay">
-                    <i class="fab fa-google-pay"></i>
-                    <span>Google Pay</span>
-                </div>
-                <div class="payment-method" data-method="paytm">
-                    <i class="fab fa-cc-paypal"></i>
-                    <span>Paytm</span>
-                </div>
-            </div>
-            
-            <div class="payment-details">
-                <p>Scan this QR code to pay</p>
-                <div class="qr-code">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=at546714-1@okhdfcbank&pn=ProjectHub&am=99&cu=INR" alt="UPI QR Code" id="qrCodeImage">
-                </div>
-                <div class="amount" id="modalProjectPrice">₹99</div>
-                <p>UPI ID:</p>
-                <p class="upi-id">at546714-1@okhdfcbank</p>
-            </div>
-            
-            <div class="success-message" id="successMessage">
-                <i class="fas fa-check-circle"></i>
-                <p>Payment verified successfully!</p>
-            </div>
-            
-            <div class="form-group">
-                <label for="utrNumber">Enter UTR Number (After Payment)</label>
-                <input type="text" id="utrNumber" class="form-control" placeholder="e.g. 123456789012">
-            </div>
-            
-            <button class="btn btn-primary btn-neon" id="verifyPayment">Verify Payment</button>
-            <button class="btn btn-primary btn-neon download-btn" id="downloadBtn">
-                <i class="fas fa-download"></i> Download Project Files
-            </button>
-        </div>
-    </div>
-
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/916307048631?text=Hi%20ProjectHub,%20I%20have%20a%20question%20about%20your%20projects" class="whatsapp-btn" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
     <!-- Footer -->
-    <footer id="contact">
+    <footer class="footer">
         <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h4>ProjectHub</h4>
-                    <p>Providing premium college projects since 2018. Helping students save time and get better grades.</p>
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="logo">
+                        <span class="logo-text">Abhay Virus</span>
+                        <span class="tagline">Major Project Seller</span>
+                    </div>
+                    <p>Providing quality academic projects to students since 2018. Helping students achieve their academic goals with ready-to-submit projects.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/abhay.tiwari.23691?rdid=q4T8a113pABch3eb&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AVs5XRKbX%2F"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://x.com/bytecraft_abhay"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/abhay_d95/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/abhayd95" target="_blank"><i class="fab fa-github"></i></a>
+                         <a href="https://www.instagram.com/abhay_d95/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/abhay-tiwari-545a57358"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
                     <ul>
+                        <li><a href="#home">Home</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#features">Features</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Categories</h4>
+                
+                <div class="footer-links">
+                    <h3>Popular Projects</h3>
                     <ul>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">AI/ML Projects</a></li>
-                        <li><a href="#">Cybersecurity</a></li>
-                        <li><a href="#">IoT Projects</a></li>
-                        <li><a href="#">Android Apps</a></li>
+                        <li><a href="http://abhayproperties.netlify.app">E-Commerce Website</a></li>
+                        <li><a href="https://strong-basbousa-72634d.netlify.app">Prima Work Force</a></li>
+                        <li><a href="https://eyehospital-u8la.onrender.com"> Eye Hospital System</a></li>
+                        <li><a href="https://hjsfhisu.com">Online Exam</a></li>
+                        <li><a href="https://abhay.com">AI Chatbot</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> at546714@gmail.com</li>
-                        <li><i class="fas fa-phone"></i> +91 6307048631</li>
-                        <li><i class="fas fa-map-marker-alt"></i> up , India</li>
-                    </ul>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new projects and offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; <a href="https://abhayvirus.onrender.com" target="_blank" style="color: #ffb300; text-decoration: underline;">abhayvirus.com</a></p>
+                <p>&copy; 2025 <a href="https://abhayvirus.onrender.com">Abhay Virus.</a> All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Refund Policy</a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- UPI Payment Modal -->
+    <div class="modal" id="payment-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Complete Your Purchase</h2>
+            <p class="selected-project">Project: <span id="selected-project-name">None selected</span></p>
+            
+            <div class="payment-methods">
+                <div class="payment-option active" data-method="upi">
+                    <i class="fas fa-qrcode"></i>
+                    <span>UPI Payment</span>
+                </div>
+                <div class="payment-option" data-method="manual">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Manual Transfer</span>
+                </div>
+            </div>
+            
+            <div class="payment-details upi-details">
+                <div class="qr-code-container">
+                    <img src="qr.jpeg" alt="UPI QR Code">
+                    <p>Scan this QR code to pay via UPI</p>
+                    <p class="upi-id">UPI ID: at546714-1@okhdfcbank</p>
+                </div>
+                
+                <div class="payment-instructions">
+                    <h3>Payment Instructions:</h3>
+                    <ol>
+                        <li>Open your UPI app (Google Pay, PhonePe, Paytm, etc.)</li>
+                        <li>Scan the QR code or enter the UPI ID manually</li>
+                        <li>Enter the exact amount as shown</li>
+                        <li>Complete the payment</li>
+                        <li>Enter your UTR/Transaction ID below</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="payment-details manual-details" style="display: none;">
+                <div class="bank-details">
+                    <h3>Bank Transfer Details:</h3>
+                    <p><strong>Account Name:</strong> Abhay Tiwari</p>
+                    <p><strong>Account Number:</strong> 433202130001744</p>
+                    <p><strong>IFSC Code:</strong> UBIN0543322</p>
+                    <p><strong>Bank Name:</strong> Union Bank Of India</p>
+                    <p><strong>Branch:</strong> Meerganj , Jaunpur</p>
+                </div>
+                
+                <div class="payment-instructions">
+                    <h3>Payment Instructions:</h3>
+                    <ol>
+                        <li>Transfer the exact amount to the account above</li>
+                        <li>Keep the transaction receipt</li>
+                        <li>Enter your UTR/Transaction ID below</li>
+                        <li>Payment verification may take 1-2 hours</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="payment-verification">
+                <div class="form-group">
+                    <label for="utr-number"></label>
+                    <input type="text" id="utr-number" placeholder="Enter your UTR/Transaction ID">
+                    <small>This is the reference number from your payment receipt</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="payment-time"></label>
+                    <input type="datetime-local" id="payment-time">
+                    <small>Enter the date and time of your payment</small>
+                </div>
+                
+                <button class="btn btn-primary" id="verify-payment">Verify Payment</button>
+            </div>
+            
+            <div class="download-section" style="display: none;">
+                <div class="success-message">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Payment Verified Successfully!</h3>
+                    <p>Your project files are ready to download.</p>
+                </div>
+                
+                <button class="btn btn-primary" id="download-project">
+                    <i class="fas fa-download"></i> <a href="erepair.zip"> Download Project Bundle</a>
+                </button>
+                
+                <div class="post-download">
+                    <p><strong>What's next?</strong></p>
+                    <ol>
+                        <li>Extract the ZIP file to a folder</li>
+                        <li>Read the README.txt file first</li>
+                        <li>Watch the setup video included in the package</li>
+                        <li>Contact support if you need any help</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/916307048631" class="float-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span>Need Help?</span>
+    </a>
+    
+    <button class="float-scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <div class="float-help-bubble">
+        <i class="fas fa-question"></i>
+        <div class="help-tooltip">
+            <p>Need assistance with your purchase?</p>
+            <p style="color: red;">Tap To Contact Us Fill the Form 👇 </p>
+            <a href="https://abhayvirus.onrender.com/form.html" class="btn btn-small">Contact Us</a>
+            
+        </div>
+    </div>
+<script>
+  const testimonials = [
+    {
+      img: "vishal.jpeg",
+      text: `"I got my major project delivered instantly. Perfect UI, working code, and complete report!"`,
+      author: "-Vishal Tiwari, BCA"
+    },
+    {
+      img: "Aditya.jpeg",
+      text: `"Best PDF project seller online! Highly trusted and quality work. I got full marks."`,
+      author: "-Aditya Pal, MCA"
+    },
+    {
+      img: "avanish.jpeg",
+      text: `"Smooth UPI payment and instant download. Loved the GUI design. Thanks Abhay bhai!"`,
+      author: "-Avanish Vishvkarma, MCA"
+    },
+    {
+      img: "mohit.jpeg",
+      text: `"Abhay PDF Selling helped me complete my college submission in 1 day. Highly recommended."`,
+      author: "-Mohit ,MCA"
+    },
+    {
+      img: "anubhav.jpeg",
+      text: `"I was struggling with my project, but Abhay's service made it so easy. Highly recommend!"`,
+      author: "-Anubhav Tripathi, BCA"
+    }
+  ];
+
+  let i = 0;
+
+  function nextTestimonial() {
+    i = (i + 1) % testimonials.length;
+    document.getElementById("testimonialImg").src = testimonials[i].img;
+    document.getElementById("testimonialText").innerText = testimonials[i].text;
+    document.getElementById("authorText").innerText = testimonials[i].author;
+  }
+</script>
     <script src="script.js"></script>
 </body>
 </html>
